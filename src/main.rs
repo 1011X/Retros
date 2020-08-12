@@ -7,8 +7,7 @@
 
 /* USINGS */
 use core::panic::PanicInfo;
-#[macro_use]
-use ::retros::println;
+use retros::{print, println, setColourcode, clear, setCursor};
 
 /* REG PANIC HANDLER */
 #[cfg(not(test))]

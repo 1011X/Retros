@@ -131,7 +131,7 @@ lazy_static! {
 /* MACROS */
 #[macro_export]
 macro_rules! print {
-	($($arg:tt)*) => ($crate::_print(format_args!($($arg)*)));
+	($($arg:tt)*) => ($crate::vga_buffer::_print(format_args!($($arg)*)));
 }
 
 #[macro_export]
@@ -142,12 +142,12 @@ macro_rules! println {
 
 #[macro_export]
 macro_rules! clear {
-	() => { $crate::_clear();};
+	() => { $crate::vga_buffer::_clear();};
 }
 
 #[macro_export]
 macro_rules! setCursor {
-	($col:tt,$row:tt) => { crate::vga_buffer::_set_cursor($row, $col);	};
+	($col:tt,$row:tt) => { $crate::vga_buffer::_set_cursor($row, $col);	};
 }
 
 #[macro_export]
